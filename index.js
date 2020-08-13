@@ -126,10 +126,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor(name, age, location) {
-    this.name = name;
-    this.age = age;
-    this.location = location;
+  constructor(attrs) {
+    this.name = attrs.name;
+    this.age = attrs.age;
+    this.location = attrs.location;
   }
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -189,11 +189,11 @@ class Student extends Lambdasian{
     this.className = attrs.className;
     this.favSubjects = attrs.favSubjects;
   }
-  listSubjects(this.favSubjects) {
-    let favSubjsString = favSubjects.join();
+  listSubjects() {
+    let favSubjsString = this.favSubjects.join();
     return `Loving ${favSubjsString}!`;
   }
-  prAssignment(subject) {
+  PRAssignment(subject) {
     return `${this.name} has submitted a PR for ${subject}`;
   }
   sprintChallenge(subject) {
